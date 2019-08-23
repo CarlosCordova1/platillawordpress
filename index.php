@@ -1,4 +1,5 @@
 <?php
+
 /*
  * @package Carlos cordova	
  * @subpackage Carlos cordova
@@ -7,14 +8,16 @@
  */
 ?>
 <!DOCTYPE HTML>
-<html lang="es">
+<html <?php language_attributes(); ?>>
 	<head>
-		<title>test web site</title>
+		<?php wp_head(); ?>
+		<title>Carlos cordova</title>
+		<meta charset="<?php bloginfo( 'charset' ); ?>" />
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
+		<link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/assets/css/main.css" />
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
+<?php wp_head(); ?>
 	</head>
 	<body class="is-preload">
 
@@ -44,7 +47,7 @@
 							<!-- Header -->
 								<header id="header">
 
-									<a href="index.html" class="logo"><strong>test</strong> by PAGE JCCC</a>
+									<a href="index.html" class="logo"><strong>Carlos </strong>Cordova</a>
 									<ul class="icons">
 										
 										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
@@ -57,7 +60,7 @@
 
 							<!-- Banner -->
 								<section id="banner">
-									<div class="content">
+									<!--<div class="content">
 										<header>
 											<h1>Cantent<br />
 											by CJJ</h1>
@@ -67,9 +70,40 @@
 										<ul class="actions">
 											<li><a href="#" class="button big">Learn More</a></li>
 										</ul>
-									</div>
+									</div>-->
+											 	<section id="primary" class="content-area content">
+												<main id="main" class="site-main">
+
+												<?php
+												if ( have_posts() ) {
+
+													// Load posts loop.
+													while ( have_posts() ) {
+														the_post();
+														get_template_part( 'template-parts/content/content' );
+													}
+
+													// Previous/next page navigation.
+													//twentynineteen_the_posts_navigation();
+
+												} else {
+
+													// If no content, include the "No posts found" template.
+													get_template_part( 'template-parts/content/content', 'none' );
+
+												}
+												?>
+
+												</main><!-- .site-main -->
+												<ul class="actions">
+											<li><a href="#" class="button big">Learn More</a></li>
+										</ul>
+											</section><!-- .content-area -->
+								
+
+
 									<span class="image object">
-										<img src="images/pic10.jpg" alt="" />
+										<img src="<?php echo get_template_directory_uri()?>/images/pic10.jpg" alt="" />
 									</span>
 								</section>
 
@@ -117,7 +151,7 @@
 									</header>
 									<div class="posts">
 										<article>
-											<a href="#" class="image"><img src="images/pic01.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic01.jpg" alt="" /></a>
 											<h3>Interdum aenean</h3>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 											<ul class="actions">
@@ -125,7 +159,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic02.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic02.jpg" alt="" /></a>
 											<h3>Nulla amet dolore</h3>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 											<ul class="actions">
@@ -133,7 +167,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic03.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic03.jpg" alt="" /></a>
 											<h3>Tempus ullamcorper</h3>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 											<ul class="actions">
@@ -141,7 +175,7 @@
 											</ul>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic04.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic04.jpg" alt="" /></a>
 											<h3>Sed etiam facilis</h3>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
 											<ul class="actions">
@@ -180,9 +214,17 @@
 								<nav id="menu">
 
 									<div class="rounded-circle" >
-  <img src="images/pic01.jpg" width="80%" class="rounded-circle" alt="...">
+  <img src="<?php echo get_template_directory_uri()?>/images/pic01.jpg" width="80%" class="rounded-circle" alt="...">
   
 </div>
+
+
+
+
+<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Area") ) : ?>
+<?php endif;?>
+
+
 
 
 
@@ -249,16 +291,18 @@
 										<h2>Publicidad</h2>
 									</header>
 									<div class="mini-posts">
+										<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Ads") ) : ?>
+<?php endif;?>
 										<article>
-											<a href="#" class="image"><img src="images/pic07.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic07.jpg" alt="" /></a>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic08.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic08.jpg" alt="" /></a>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
 										</article>
 										<article>
-											<a href="#" class="image"><img src="images/pic09.jpg" alt="" /></a>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic09.jpg" alt="" /></a>
 											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
 										</article>
 									</div>
@@ -292,11 +336,11 @@
 			</div>
 
 		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
+			<script src="<?php echo get_template_directory_uri()?>/assets/js/jquery.min.js"></script>
+			<script src="<?php echo get_template_directory_uri()?>/assets/js/browser.min.js"></script>
+			<script src="<?php echo get_template_directory_uri()?>/assets/js/breakpoints.min.js"></script>
+			<script src="<?php echo get_template_directory_uri()?>/assets/js/util.js"></script>
+			<script src="<?php echo get_template_directory_uri()?>/assets/js/main.js"></script>
 			<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
