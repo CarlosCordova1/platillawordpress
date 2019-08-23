@@ -7,18 +7,9 @@
  * @version 1.0
  */
 ?>
-<!DOCTYPE HTML>
-<html <?php language_attributes(); ?>>
-	<head>
-		<?php wp_head(); ?>
-		<title>Carlos cordova</title>
-		<meta charset="<?php bloginfo( 'charset' ); ?>" />
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="<?php echo get_template_directory_uri()?>/assets/css/main.css" />
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-<?php wp_head(); ?>
-	</head>
+
+<?php get_header();?>
+
 	<body class="is-preload">
 
 		<!-- Wrapper -->
@@ -311,24 +302,10 @@
 									</ul>
 								</section>
 
-							<!-- Section -->
-								<section>
-									<header class="major">
-										<h2>contacto</h2>
-									</header>
-									<p>Ingeniero En sistemas compuntaciones con Maestria en Tecnologias de informacion y comunicacion</p>
-									<ul class="contact">
-										<li class="icon solid fa-envelope"><a href="#">carloscordova9003@gmail.com</a></li>
-									<!--	<li class="icon solid fa-phone">(000) 000-0000</li>
-										<li class="icon solid fa-home">1234 Somewhere Road #8254<br />
-										Nashville, TN 00000-0000</li>-->
-									</ul>
-								</section>
-
-							<!-- Footer -->
-								<footer id="footer">
-									<p class="copyright">&copy; All rights reserved. <a href="#">Carlos Cordova</a>.</p>
-								</footer>
+						
+							<?php
+							get_footer();
+							?>
 
 						</div>
 					</div>
