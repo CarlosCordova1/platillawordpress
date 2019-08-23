@@ -1,3 +1,7 @@
 <?php
-echo "nueva plantilla para wordpress";
-?>
+/ *
+ * @package Carlos cordova	
+ * @subpackage Carlos cordova
+ * @since 1.0
+ * @version 1.0
+ */
