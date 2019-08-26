@@ -51,17 +51,7 @@
 
 							<!-- Banner -->
 								<section id="banner">
-									<!--<div class="content">
-										<header>
-											<h1>Cantent<br />
-											by CJJ</h1>
-											<p>Lorem Ipsum is simply dummy text of t hen an unknown printer took a galley of type and </p>
-										</header>
-										<p>ontrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at Hampden-Sydney College in Virginia, looked up one of the more obscure Latin words, consectetur, from a Lorem Ipsum passage, and going through the cites of the word in classical literature, discovered the undoubtable source. Lorem Ipsum comes from sections </p>
-										<ul class="actions">
-											<li><a href="#" class="button big">Learn More</a></li>
-										</ul>
-									</div>-->
+									
 											 	<section id="primary" class="content-area content">
 												<main id="main" class="site-main">
 
@@ -92,9 +82,7 @@
 								
 
 
-									<span class="image object">
-										<img src="<?php echo get_template_directory_uri()?>/images/pic10.jpg" alt="" />
-									</span>
+									
 								</section>
  
 								<section>
