@@ -41,8 +41,8 @@
 									<a href="index.html" class="logo"><strong>Carlos </strong>Cordova</a>
 									<ul class="icons">
 										
-										<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
+										<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://facebook.com/CarlosCordova9003" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
 										
 										
 										
@@ -212,22 +212,20 @@
 
 
 
-<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Area") ) : ?>
-<?php endif;?>
-
-
-
-
-
-									<header class="major">
+							<!--<header class="major">
 										<h2>Menu</h2>
-									</header>
+									</header>-->
+		 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Area") ) : ?>
+<?php endif;?>   <?php /* ?>
 									<ul>
+ 
+										
 										<li><a href="index.html">Homepage</a></li>
 										<li><a href="generic.html">Generic</a></li>
 										<li><a href="elements.html">Elements</a></li>
 										<li>
 											<span class="opener">Frontend</span>
+
 											<ul>
 												<li><a href="#">Lorem Dolor</a></li>
 												<li><a href="#">Ipsum Adipiscing</a></li>
@@ -274,6 +272,7 @@
  
 										<li><a href="#">...</a></li>
 									</ul>
+									<?php */ ?>
 								</nav>
 
 							<!-- Section -->

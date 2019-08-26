@@ -229,9 +229,23 @@
 
 				});
 
-	// Menu.
-		var $menu = $('#menu'),
-			$menu_openers = $menu.children('ul').find('.opener');
+	// Menu. 
+		var $menu1 = $('#menu'),
+		$menu_openers21 = $menu1.children('ul').find('.children').parent().find('> a').text();
+
+//console.log($menu_openers21);
+
+		$menu_openers22 = $menu1.children('ul').find('.children').parent().find('> a').remove();
+
+		//console.log($menu_openers22);
+
+			$menu_openers22 = $menu1.children('ul').find('.children').parent().prepend('<span class="opener">'+$menu_openers21+'</span>');
+
+		//	console.log($menu_openers22);
+			var $menu = $('#menu'),
+			$menu_openers = $menu1.children('ul').find('.opener');
+
+			
 
 		// Openers.
 			$menu_openers.each(function() {
