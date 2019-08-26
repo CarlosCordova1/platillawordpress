@@ -1,31 +1,59 @@
 <?php
-/**
- * The template for displaying archive pages
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
- */
 
 get_header();
 ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main">
+	<body class="is-preload">
 
-		<?php if ( have_posts() ) : ?>
+		<!-- Wrapper -->
+			<div id="wrapper">
 
-			<header class="page-header">
-				<?php
-					the_archive_title( '<h1 class="page-title">', '</h1>' );
+				<!-- Main -->
+					<div id="main">
+						<div class="inner">
+
+ 
+
+   <div class="row">
+   <div class="col-7"></div>
+    <div class="col-5"><br>
+      <!-- Search -->
+								<section id="search" class="alt">
+									<form method="post" action="#">
+										<input type="text" name="query" id="query" placeholder="Search" />
+									</form>
+								</section>
+    </div>
+  </div>
+
+							
+
+							<!-- Header -->
+								<header id="header">
+
+									<a href="index.html" class="logo"><strong>Carlos </strong>Cordova</a>
+									<ul class="icons">
+										
+										<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
+										<li><a href="https://facebook.com/CarlosCordova9003" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
+										
+										
+										
+									</ul>
+								</header>
+
+
+
+
+	<section>
+									<header class="major">
+											<?php if ( have_posts() ) : ?>
+										<?php
+					the_archive_title( '<h2 class="page-title">', '</h2>' );
 				?>
-			</header><!-- .page-header -->
-
-			<?php
-			// Start the Loop.
-			while ( have_posts() ) :
+									</header>
+									<div class="posts">
+									<?php	while ( have_posts() ) :
 				the_post();
 
 				/*
@@ -39,7 +67,7 @@ get_header();
 			endwhile;
 
 			// Previous/next page navigation.
-			twentynineteen_the_posts_navigation();
+			//twentynineteen_the_posts_navigation();
 
 			// If no content, include the "No posts found" template.
 		else :
@@ -47,8 +75,99 @@ get_header();
 
 		endif;
 		?>
-		</main><!-- #main -->
-	</section><!-- #primary -->
+									<?php /* ?>	<article>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic02.jpg" alt="" /></a>
+											<h3>Nulla amet dolore</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic03.jpg" alt="" /></a>
+											<h3>Tempus ullamcorper</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic04.jpg" alt="" /></a>
+											<h3>Sed etiam facilis</h3>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore. Proin aliquam facilisis ante interdum. Sed nulla amet lorem feugiat tempus aliquam.</p>
+											<ul class="actions">
+												<li><a href="#" class="button">More</a></li>
+											</ul>
+										</article> <?php */ ?>
+									 
+									</div>
+								</section>
 
-<?php
-get_footer();
+
+						</div>
+					</div>
+
+				<!-- Sidebar -->
+					<div id="sidebar">
+						<div class="inner">
+
+							
+
+							<!-- Menu -->
+								<nav id="menu">
+
+									<div class="rounded-circle" >
+  <img src="<?php echo get_template_directory_uri()?>/images/pic01.jpg" width="80%" class="rounded-circle" alt="...">
+  
+</div>
+
+
+
+
+							<!--<header class="major">
+										<h2>Menu</h2>
+									</header>-->
+		 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Area") ) : ?>
+<?php endif;?> 
+								</nav>
+
+							<!-- Section -->
+								<section>
+									<header class="major">
+										<h2>Publicidad</h2>
+									</header>
+									<div class="mini-posts">
+										<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Ads") ) : ?>
+<?php endif;?>
+										<article>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic07.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic08.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+										<article>
+											<a href="#" class="image"><img src="<?php echo get_template_directory_uri()?>/images/pic09.jpg" alt="" /></a>
+											<p>Aenean ornare velit lacus, ac varius enim lorem ullamcorper dolore aliquam.</p>
+										</article>
+									</div>
+									<ul class="actions">
+										<li><a href="#" class="button">More</a></li>
+									</ul>
+								</section>
+
+						
+							<?php
+							get_footer();
+							?>
+
+						</div>
+					</div>
+
+			</div>
+
+	
+
+	</body>
+</html>

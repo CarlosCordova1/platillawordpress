@@ -1,18 +1,8 @@
 <?php
-/**
- * Template part for displaying posts
- *
- * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
- */
-
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header">
+	<header class="entry-header major">
 		<?php
 		if ( is_sticky() && is_home() && ! is_paged() ) {
 			printf( '<span class="sticky-post">%s</span>', _x( 'Featured', 'post', 'twentynineteen' ) );
@@ -56,4 +46,7 @@
 	<footer class="entry-footer">
 		<?php //twentynineteen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
+	<ul class="actions">
+											<li><a href="#" class="button big">Learn More dos</a></li>
+										</ul>
 </article><!-- #post-<?php the_ID(); ?> -->
