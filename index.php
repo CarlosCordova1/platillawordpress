@@ -19,35 +19,11 @@
 					<div id="main">
 						<div class="inner">
 
- 
-
-   <div class="row">
-   <div class="col-7"></div>
-    <div class="col-5"><br>
-      <!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-    </div>
-  </div>
 
 							
 
 							<!-- Header -->
-								<header id="header">
-
-									<a href="index.html" class="logo"><strong>Carlos </strong>Cordova</a>
-									<ul class="icons">
-										
-										<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://facebook.com/CarlosCordova9003" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										
-										
-										
-									</ul>
-								</header>
+						<?php get_template_part( 'template-parts/header/header2plantilla' );?>
 
 							<!-- Banner -->
 								<section id="banner">
@@ -138,63 +114,7 @@
 										<h2>Menu</h2>
 									</header>-->
 		 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Area") ) : ?>
-<?php endif;?>   <?php /* ?>
-									<ul>
- 
-										
-										<li><a href="index.html">Homepage</a></li>
-										<li><a href="generic.html">Generic</a></li>
-										<li><a href="elements.html">Elements</a></li>
-										<li>
-											<span class="opener">Frontend</span>
-
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">Backend</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">Base de datos</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">Android</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
-										<li>
-											<span class="opener">Otros</span>
-											<ul>
-												<li><a href="#">Lorem Dolor</a></li>
-												<li><a href="#">Ipsum Adipiscing</a></li>
-												<li><a href="#">Tempus Magna</a></li>
-												<li><a href="#">Feugiat Veroeros</a></li>
-											</ul>
-										</li>
- 
-										<li><a href="#">...</a></li>
-									</ul>
-									<?php */ ?>
+<?php endif;?> 
 								</nav>
 
 							<!-- Section -->
