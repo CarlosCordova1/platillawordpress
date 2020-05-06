@@ -114,22 +114,8 @@ get_header();
 							
 
 							<!-- Menu -->
-								<nav id="menu">
 
-									<div class="rounded-circle" >
-  <img src="<?php echo get_template_directory_uri()?>/images/pic01.jpg" width="80%" class="rounded-circle" alt="...">
-  
-</div>
-
-
-
-
-							<!--<header class="major">
-										<h2>Menu</h2>
-									</header>-->
-		 	<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized Area") ) : ?>
-<?php endif;?> 
-								</nav>
+<?php get_template_part( 'template-parts/header/menunav' );?>
 
 							<!-- Section -->
 								<section>

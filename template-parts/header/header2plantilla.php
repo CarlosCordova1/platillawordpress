@@ -21,7 +21,7 @@
 
 		<header id="header">
 
-									<a href="index.html" class="logo"><strong>Carlos </strong>Cordova</a>
+									<a href="<?php echo get_home_url(); ?>" class="logo"><strong>Carlos </strong>Cordova</a>
 									<ul class="icons">
 										
 										<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-github"><span class="label">Facebook</span></a></li>
