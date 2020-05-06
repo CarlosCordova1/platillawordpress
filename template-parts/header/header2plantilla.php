@@ -4,12 +4,15 @@
    <div class="col-7"></div>
     <div class="col-5"><br>
       <!-- Search -->
-								<section id="search" class="alt">
+								<section id="search1" class="alt">
 									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Se<zx<zarch" />
-										<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("Widgetized search") ) : ?>
+										<!--<input type="text" name="query" id="query" placeholder="Se<zx<zarch" />-->
+									 
+										<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("search") ) : ?>
 <?php endif;?> 
+ 
 									</form>
+ 
 								</section>
     </div>
   </div>

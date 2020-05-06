@@ -20,13 +20,30 @@ if ( function_exists('register_sidebar') )
   )
 );
     register_sidebar(array(
-    'name' => 'Widgetized search',
-    'before_widget' => '<div class = "widgetizedAreasearch">',
-    'after_widget' => '</div>',
-    'before_title' => '<h3>',
-    'after_title' => '</h3>',
+    'name' => 'search',
+   'before_widget' => '',
+    'after_widget' => '',
+     'before_title' => '',
+    'after_title' => '',
   )
 );
+
+// Add to your init function
+add_filter('get_search_form', 'my_search_form');
+ 
+function my_search_form($text) {
+     //$text = str_replace('<label class="screen-reader-text" for="s">Search for:</label>', '', $text);
+   //  $text = str_replace('<input type="text" value="" name="s" id="s">', '<input type="text" name="s" id="s" class="form-control" placeholder="search" aria-label="Recipients username" aria-describedby="button-addon2">', $text);
+    // return $text;
+
+return '<div class="input-group">
+  <input type="text" value="" name="s" id="s" class="form-control" placeholder="search" aria-label="Recipients username" aria-describedby="button-addon2">
+  <div class="input-group-append">
+    <input type="submit" id="searchsubmit" value="Search">
+  </div>
+</div>';
+
+}
 
 add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
