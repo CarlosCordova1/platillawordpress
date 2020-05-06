@@ -45,6 +45,33 @@ return '<div class="input-group">
 
 }
 
+
+if ( ! function_exists( 'twentynineteen_the_posts_navigation' ) ) :
+  /**
+   * Documentation for function.
+   */
+  function twentynineteen_the_posts_navigation() {
+    the_posts_pagination(
+      array(
+        'mid_size'  => 2,
+        'prev_text' => sprintf(
+          '%s <span class="nav-prev-text">%s</span>',
+          twentynineteen_get_icon_svg( 'chevron_left', 22 ),
+          __( 'Newer posts', 'twentynineteen' )
+        ),
+        'next_text' => sprintf(
+          '<span class="nav-next-text">%s</span> %s',
+          __( 'Older posts', 'twentynineteen' ),
+          twentynineteen_get_icon_svg( 'chevron_right', 22 )
+        ),
+      )
+    );
+  }
+endif;
+
+
+
+
 add_theme_support( 'title-tag' );
   add_theme_support( 'post-thumbnails' );
     set_post_thumbnail_size( 1568, 9999 );
