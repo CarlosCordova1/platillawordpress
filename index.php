@@ -38,6 +38,7 @@
 													while ( have_posts() ) {
 														the_post();
 														get_template_part( 'template-parts/content/content' );
+														//get_template_part( 'template-parts/content/content-excerpt' );
 														break;
 													}
 
@@ -71,7 +72,7 @@
 													// Load posts loop.
 													while ( have_posts()) {
 														the_post();
-														get_template_part( 'template-parts/content/content' );
+														get_template_part( 'template-parts/content/content-excerpt' );
 														 
 													}
 

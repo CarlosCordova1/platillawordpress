@@ -46,7 +46,5 @@
 	<footer class="entry-footer">
 		<?php //twentynineteen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
-	<ul class="actions">
-											<li><a href="#" class="button big">Learn More dos</a></li>
-										</ul>
+
 </article><!-- #post-<?php the_ID(); ?> -->
