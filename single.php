@@ -43,7 +43,7 @@ get_header();
 					<div class="container">
   <!-- Stack the columns on mobile by making one full-width and the other half-width -->
 
-  
+  <div class="container_prevandnextpost">
     	<?php
 					the_post_navigation(
 						array(
@@ -58,10 +58,8 @@ get_header();
 					);
 					?>
 
-
-
-
- 
+</div>
+<div style="display: inline-block;"></div>
    </div>
 
 					<?php

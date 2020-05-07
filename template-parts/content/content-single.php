@@ -1,4 +1,3 @@
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<?php if ( ! twentynineteen_can_show_post_thumbnail() ) : ?>
 	<header class="entry-header">
@@ -39,5 +38,4 @@
 	<?php if ( ! is_singular( 'attachment' ) ) : ?>
 		<?php get_template_part( 'template-parts/post/author', 'bio' ); ?>
 	<?php endif; ?>
-
 </article><!-- #post-<?php the_ID(); ?> -->

@@ -29,14 +29,31 @@
 
 			<p><?php _e( 'Sorry, but nothing matched your search terms. Please try again with some different keywords.', 'twentynineteen' ); ?></p>
 			<?php
-			get_search_form();
-
+			//get_search_form();
+			?>
+				<form method="post" action="#">
+										<!--<input type="text" name="query" id="query" placeholder="Se<zx<zarch" />-->
+									 
+										<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("search") ) : ?>
+<?php endif;?> 
+ 
+									</form>
+<?php
 		else :
 			?>
 
 			<p><?php _e( 'It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help.', 'twentynineteen' ); ?></p>
 			<?php
-			get_search_form();
+			//get_search_form();
+			?>
+			<form method="post" action="#">
+										<!--<input type="text" name="query" id="query" placeholder="Se<zx<zarch" />-->
+									 
+										<?php if ( !function_exists('dynamic_sidebar') || !dynamic_sidebar("search") ) : ?>
+<?php endif;?> 
+ 
+									</form>
+									<?php
 
 		endif;
 		?>

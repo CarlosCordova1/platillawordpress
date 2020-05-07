@@ -1,6 +1,3 @@
-<?php
-?>
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header major">
 		<?php
@@ -17,7 +14,7 @@
 
 	<?php// twentynineteen_post_thumbnail(); ?>
 
-	<div class="entry-content">
+	<div class="entry-content"> 
 		<?php
 		the_content(
 			sprintf(
@@ -44,7 +41,7 @@
 	</div><!-- .entry-content -->
 
 	<footer class="entry-footer">
-		<?php //twentynineteen_entry_footer(); ?>
+		<?php twentynineteen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 
 </article><!-- #post-<?php the_ID(); ?> -->
