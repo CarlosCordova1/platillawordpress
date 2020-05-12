@@ -26,6 +26,31 @@ footer, header, hgroup, menu, nav, section {
 	.container_prevandnextpost  .nav-previous,.container_prevandnextpost  .nav-next{width: 35%;
     float: left;}
 
+.pagination {
+    width: 100%;
+    display: flex;
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1em;
+}
+
+.pagination .page-numbers {
+    border-radius: 3px;
+    background: #ececec;
+    color: rgba(0, 0, 0, 0.8);
+    line-height: 2.2;
+    margin: 0 0.2em;
+    padding: 0 0.9em;
+    transition: all 0.15s ease;
+}
+
+.pagination a.page-numbers:hover,
+.pagination .page-numbers.current {
+    background: #6acff5;
+    color: #FFF;
+}
+
 body {
 	line-height: 1;
 }
@@ -153,6 +178,7 @@ input, select, textarea {
 		color: #6acff5;
 		text-decoration: none;
 	}
+	.rounded-circle a {border-bottom: none;}
 
 		a:hover {
 			border-bottom-color: #6acff5;
@@ -3108,6 +3134,8 @@ input, select, textarea {
 			padding-right: 2.75em;
 		}
 
+
+
 	#sidebar {
 		-moz-flex-grow: 0;
 		-webkit-flex-grow: 0;
@@ -3122,10 +3150,12 @@ input, select, textarea {
 		-ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		/*background-color: #f5f6f7;*/
-		background-color: #bbdbfd;
+		background-color: #bbdbfd42;
 		font-size: 0.9em;
 		position: relative;
 		width: 26em;
+		border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+		text-align: center;
 	}
 
 		#sidebar h2 {
@@ -3136,10 +3166,11 @@ input, select, textarea {
 			padding: 2.22222em 2.22222em 2.44444em 2.22222em ;
 			position: relative;
 			width: 26em;
+			box-shadow: rgba(0, 0, 0, 0.75) 7px 0px 18px -6px;
 		}
 
 			#sidebar > .inner > * {
-				border-bottom: solid 2px rgba(210, 215, 217, 0.75);
+				
 				margin: 0 0 3.5em 0;
 				padding: 0 0 3.5em 0;
 			}

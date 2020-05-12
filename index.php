@@ -90,6 +90,7 @@
 										 
 									</div>
 								</section>
+								<div class="pagination"> <?php echo paginate_links( $args );?> </div>
 
 						</div>
 					</div>
