@@ -3150,7 +3150,7 @@ input, select, textarea {
 		-ms-transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		transition: margin-left 0.5s ease, box-shadow 0.5s ease;
 		/*background-color: #f5f6f7;*/
-		background-color: #bbdbfd42;
+		background-color: #fff;
 		font-size: 0.9em;
 		position: relative;
 		width: 26em;
@@ -3165,7 +3165,7 @@ input, select, textarea {
 		#sidebar > .inner {
 			padding: 2.22222em 2.22222em 2.44444em 2.22222em ;
 			position: relative;
-			width: 26em;
+			width: 23em;
 			box-shadow: rgba(0, 0, 0, 0.75) 7px 0px 18px -6px;
 		}
 
