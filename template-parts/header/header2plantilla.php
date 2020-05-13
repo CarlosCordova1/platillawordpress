@@ -25,7 +25,7 @@
 									<ul class="icons">
 										
 										<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-github"><span class="label">Facebook</span></a></li>
-										<li><a href="https://facebook.com/CarlosCordova9008" target="_blank" class="icon brands fa-facebook-f"><span class="label">Github</span></a></li>
+										<li><a href="https://www.facebook.com/Carlos-Cordova-113728683670467/" target="_blank" class="icon brands fa-facebook-f"><span class="label">Github</span></a></li>
 										
 										
 										

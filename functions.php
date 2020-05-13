@@ -37,7 +37,7 @@ function my_search_form($text) {
     // return $text;
 
 return '<div class="input-group">
-  <input type="text" value="" name="s" id="s" class="form-control" placeholder="search" aria-label="Recipients username" aria-describedby="button-addon2">
+  <input type="text" value="" name="s" id="s" class="form-control" placeholder="Buscar" aria-label="Recipients username" aria-describedby="button-addon2">
   <div class="input-group-append">
     <input type="submit" id="searchsubmit" value="Search">
   </div>
