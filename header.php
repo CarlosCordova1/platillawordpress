@@ -19,4 +19,5 @@
   gtag('config', 'UA-166484475-1');
 </script>
 <script data-ad-client="ca-pub-4361208863589003" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<script type="text/javascript" src="https://platform.linkedin.com/badges/js/profile.js" async defer></script>
 	</head>
