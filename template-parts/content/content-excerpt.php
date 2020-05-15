@@ -19,6 +19,6 @@
 		<?php //twentynineteen_entry_footer(); ?>
 	</footer><!-- .entry-footer -->
 		<ul class="actions">
-											<li><a href="<?php the_permalink(); ?>" class="button big">Learn More</a></li>
+											<li><a href="<?php the_permalink(); ?>" class="button big">Leer más</a></li>
 										</ul>
 </article><!-- #post-<?php the_ID(); ?> -->
