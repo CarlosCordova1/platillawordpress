@@ -1,10 +1,9 @@
 <?php
-/**
- * Displays the footer widget area
- *
- * @package WordPress
- * @subpackage Twenty_Nineteen
- * @since 1.0.0
+/*
+ * @package Carlos cordova	
+ * @subpackage Carlos cordova
+ * @since 1.0
+ * @version 1.0
  */
 
 if ( is_active_sidebar( 'sidebar-1' ) ) : ?>
