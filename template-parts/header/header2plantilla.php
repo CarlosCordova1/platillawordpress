@@ -24,9 +24,10 @@
 									<a href="<?php echo get_home_url(); ?>" class="logo"><strong>Carlos </strong>Cordova</a>
 									<ul class="icons">
 										
-										<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-github"><span class="label">Facebook</span></a></li>
-										<li><a href="https://www.facebook.com/Carlos-Cordova-113728683670467/" target="_blank" class="icon brands fa-facebook-f"><span class="label">Github</span></a></li>
-										<li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+			<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-github"><span class="label">Facebook</span></a></li>
+			<li><a href="https://www.facebook.com/Carlos-Cordova-113728683670467/" target="_blank" class="icon brands fa-facebook-f"><span class="label">Github</span></a></li>
+			<li><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" class="icon brands fa-linkedin"><span class="label">Linkedin</span></a></li>
+			<li ><a href="https://stackexchange.com/users/16915943/carlos-cordova?tab=accounts" target="_blank" class="icon brands fab fa-stack-overflow fa-fw" ><span class="label">Stack Overflow</span> </a></li>
 										
 										 
 										

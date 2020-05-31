@@ -12,36 +12,8 @@ get_header();
 				<!-- Main -->
 					<div id="main">
 						<div class="inner">
-
- 
-
-   <div class="row">
-   <div class="col-7"></div>
-    <div class="col-5"><br>
-      <!-- Search -->
-								<section id="search" class="alt">
-									<form method="post" action="#">
-										<input type="text" name="query" id="query" placeholder="Search" />
-									</form>
-								</section>
-    </div>
-  </div>
-
-							
-
-							<!-- Header -->
-								<header id="header">
-
-									<a href="index.html" class="logo"><strong>Carlos </strong>Cordova</a>
-									<ul class="icons">
-										
-										<li><a href="https://github.com/CarlosCordova1" target="_blank" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-										<li><a href="https://facebook.com/CarlosCordova9003" target="_blank" class="icon brands fa-github"><span class="label">Github</span></a></li>
-										
-										
-										
-									</ul>
-								</header>
+	<!-- Header -->
+						<?php get_template_part( 'template-parts/header/header2plantilla' );?>
 
 
 

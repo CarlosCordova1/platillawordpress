@@ -1,6 +1,143 @@
 <?php
 
+ // ajax---------------------------------------------
+function my_action_callback()
+{  
+    $page = substr( trim($_POST['page']), 0,10);
+  if ($page=="aboutme") {
+   get_template_part( 'template-parts/content/aboutme', 'main' );
+  }
+  else if ($page=="portfolio") {
+    get_template_part( 'template-parts/content/aboutme', 'portfolio' );
+  }
+ else if ($page=="resume") {
+    get_template_part( 'template-parts/content/aboutme', 'resume' );
+  }
+   else if ($page=="blog") {
+    get_template_part( 'template-parts/content/aboutme', 'blog' );
+  }
+  else if ($page=="contact") {
+    get_template_part( 'template-parts/content/aboutme', 'contact' );
+  }
+
  
+
+    wp_die(); // this is required to terminate immediately and return a proper response
+}
+add_action('wp_ajax_nopriv_my_action', 'my_action_callback');
+
+ // ajax---------------------------------------------
+function enviarmensaje_callback()
+{
+ //var_dump($_POST);
+ $nombre=$_POST["nombre"];
+ 
+$services=$_POST["services"];
+ $email=filter_var (htmlspecialchars($_POST["email"]),FILTER_SANITIZE_EMAIL);
+
+$cmessage=filter_var (htmlspecialchars($_POST["cmessage"]),FILTER_SANITIZE_SPECIAL_CHARS);
+  
+
+ 
+   $body='  
+ <div class="project-meta media flex-column flex-md-row p-4 theme-bg-light">
+            <a  target="_blank" href="http://carloscordova.com/"><img style="width: 20%;" class="project-thumb mb-3 mb-md-0 mr-md-5 rounded d-none d-md-inline-block" src="'. get_template_directory_uri().'/assets/img/portfolio-blog.jpg" alt="portfolio-blog"></a>
+          <div class="media-body">
+              <div class="client-info">
+                <h3 class="client-name font-weight-bold mb-4" style="color:#6acff5;">Gracias por ponerte en contacto conmigo, lo más pronto posible estare leyendo tu mensaje, y nuevamente, Muchas Gracias! <i class="far fa-smile-beam"></i></h3>
+                 <h2 class="client-name font-weight-bold mb-4">Datos recibidos</h2>
+                <ul class="client-meta list-unstyled">
+                  <li class="mb-2"><i class="fas fa-user fa-fw mr-2"></i><strong>Nombre:</strong> '.$nombre.'</li>
+                  <li class="mb-2"><i class="fas fa-envelope-square fa-fw fa-lg mr-2"></i><strong>Email:</strong>  '.$email.'</li>
+                  <li class="mb-2"><i class="fas fa-info fa-fw fa-lg mr-2"></i><strong>Tema de Interes:</strong> '.$services.' </li>
+                                
+                </ul>
+               
+        <i class="fas fa-file-alt mr-2"></i><strong>Mensaje</strong>
+  <div class="client-bio mb-4">  '.$cmessage.'</div>
+              </div>          
+          </div><!--//media-body-->
+        </div><!--//project-meta-->
+
+    <section class="cta-section theme-bg-light py-5">
+        <div class="container text-center single-col-max-width">
+          <h2 class="heading">Contacto</h2>
+          <div class="intro">
+          <p>enviame un email a <a href="mailto:#">contacto@carloscordova.com</a></p>
+          <p>Sigueme en los siguientes canales sociales</p>
+          <ul class="list-inline mb-0">
+            <li class="list-inline-item b-3"><a href="https://github.com/CarlosCordova1" target="_blank" >github.com/CarlosCordova1<i class="fab icon brands fa-github fa-lg"></i> </a></li>
+                  <li class="list-inline-item mb-3"><a href="https://www.facebook.com/jcarlosccordova/" target="_blank" >facebook.com/jcarlosccordova<i class="fab icon brands fa-facebook-f fa-lg"></i></a></li>
+          <li class="list-inline-item mb-3"><a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile" target="_blank" >linkedin.com/carlos-cordova<i class="fab icon brands fa-linkedin fa-lg"></i></a> </li>
+              <li class="list-inline-item mb-3"><a href="https://stackexchange.com/users/16915943/carlos-cordova?tab=accounts" target="_blank" >stack-overflow/carloscordova<i class="fab fa-stack-overflow fa-fw fa-lg"></i></a></li>
+              
+                  
+              </ul><!--//social-list-->
+          </div>
+          
+      </div><!--//container-->
+      </section>    ';
+
+  
+$recaptcha=json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LcGUf0UAAAAANaEYRvDk79gv3F4sU-MPSBd7kGQ&response='.$_POST['g-recaptcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']));
+
+if ($recaptcha->success) {
+  
+
+ $to = $email ;
+$subject = $services;
+$message = $body;
+$headers = 'MIME-Version: 1.0' . "\r\n";
+$headers .= 'Content-type: text/html; charset=utf-8' . "\r\n";
+$headers .= "From: contacto@carloscordova.com" . "\r\n" . "CC: carloscordova9003@gmail.com";
+ 
+   if (mail($to, $subject, $message, $headers)  ) {
+    session_start();
+session_destroy();
+
+        set_query_var( 'data', array("nombre"=>$nombre,"services"=>$services,"email"=>$email,"cmessage"=>$cmessage) );
+ ?>
+ <script type="text/javascript">
+  
+   ga('create', 'UA-166484475-1', 'auto', window.location+'/acerca-de-mi/page-bton-enviarmsg-exito');
+ </script>
+ <?php
+   get_template_part( 'template-parts/content/aboutme', 'thankyou' );
+  }else{
+    session_start();
+    $_SESSION["contacto"] = array("nombre"=>$nombre,"services"=>$services,"email"=>$email,"cmessage"=>$cmessage );
+    ?>
+     <script type="text/javascript">
+   
+   ga('create', 'UA-166484475-1', 'auto', window.location+'/acerca-de-mi/page-bton-enviarms-gerror-enviar');
+ </script>
+    <div class="alert alert-warning">
+  <strong><i class="fas fa-sad-tear"></i></strong> Lo siento, no se pudo enviar el mensaje, porfavor de <a class="link-on-bg bton-contacto" href="#">Intentar nuevamente</a>.
+</div>
+    <?php
+  }
+}else{
+   session_start();
+    $_SESSION["contacto"] = array("nombre"=>$nombre,"services"=>$services,"email"=>$email,"cmessage"=>$cmessage );
+     
+    ?>
+      <script type="text/javascript">
+   
+   ga('create', 'UA-166484475-1', 'auto', window.location+'/acerca-de-mi/page-bton-enviarmsg-error-CAPTCHA');
+ </script>
+    <div class="alert alert-warning">
+  <strong><i class="fas fa-sad-tear"></i></strong> Lo siento, no se pudo enviar el mensaje, no marco el CAPTCHA, porfavor de <a class="link-on-bg bton-contacto" href="#">Intentar nuevamente</a>.
+</div>
+    <?php
+}
+
+
+     wp_die(); // this is required to terminate immediately and return a proper response
+}
+add_action('wp_ajax_nopriv_enviarmensaje', 'enviarmensaje_callback');
+
+
+
 
 if ( function_exists('register_sidebar') )
   register_sidebar(array(
@@ -39,7 +176,7 @@ function my_search_form($text) {
 return '<div class="input-group">
   <input type="text" value="" name="s" id="s" class="form-control" placeholder="Buscar" aria-label="Recipients username" aria-describedby="button-addon2">
   <div class="input-group-append">
-    <input type="submit" id="searchsubmit" value="Search">
+    <input type="submit" id="searchsubmit" value="Buscar">
   </div>
 </div>';
 
