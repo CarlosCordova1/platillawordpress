@@ -79,7 +79,7 @@ $cmessage=filter_var (htmlspecialchars($_POST["cmessage"]),FILTER_SANITIZE_SPECI
       </section>    ';
 
   
-$recaptcha=json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=6LcGUf0UAAAAANaEYRvDk79gv3F4sU-MPSBd7kGQ&response='.$_POST['g-recaptcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']));
+$recaptcha=json_decode(file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret=?&response='.$_POST['g-recaptcha-response'].'&remoteip='.$_SERVER['REMOTE_ADDR']));
 
 if ($recaptcha->success) {
   
